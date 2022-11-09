@@ -50,6 +50,7 @@ def valida_questoes(lista):
         prob_identificados.append(prob_identificado)
     return prob_identificados
 
+import random 
 
 def sorteia_questao (dicio, nivel):
     max = len(dicio[nivel])
@@ -57,8 +58,6 @@ def sorteia_questao (dicio, nivel):
     perg_sor = dicio[nivel][num]
     return perg_sor 
 
-
-import random 
 
 def sorteia_questao_inedita (dicio, nivel, lista):
     max = len(dicio[nivel])
