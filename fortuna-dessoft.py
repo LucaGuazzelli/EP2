@@ -1,6 +1,10 @@
 
 import random
 
+lista_premiacao = [1000, 5000, 10000, 30000, 50000, 100000, 300000, 500000, 1000000]
+
+premiacao = 0
+
 def transforma_base(listax):
     dic = {}
     for dicio in listax:
