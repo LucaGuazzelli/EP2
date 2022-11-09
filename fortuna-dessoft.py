@@ -75,6 +75,7 @@ def sorteia_questao_inedita (dicio, nivel, lista):
 def questao_para_texto(questao, id):
     return f"------------------------------------------\nQUESTAO {id}\n\n{questao['titulo']}\n\nRESPOSTAS:\nA: {questao['opcoes']['A']}\nB: {questao['opcoes']['B']}\nC: {questao['opcoes']['C']}\nD: {questao['opcoes']['D']}"
     
+
 def gera_ajuda(questao):
     lista = [ "A", "B", "C", "D"]
     lista.remove(questao["correta"])
