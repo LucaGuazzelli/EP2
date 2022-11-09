@@ -6,3 +6,39 @@ def transforma_base(listax):
             dic[n] = []
         dic[n].append(dicio)
     return dic
+
+
+def valida_questao(questao):
+    dic = {}
+    chaves = ["titulo", "nivel", "opcoes", "correta"]
+    nivels = ["facil", "medio", "dificil"]
+    letras = ["A", "B", "C", "D"]
+    for chave in chaves:
+        if chave not in questao:
+            dic[chave] = "nao_encontrado"
+    if len(questao) != 4:
+        dic["outro"] = "numero_chaves_invalido"
+    if chaves[0] in questao:
+        if questao["titulo"].strip() == "":
+            dic["titulo"] = "vazio"
+    if chaves[1] in questao:
+        if questao["nivel"] not in nivels:
+            dic["nivel"] = 'valor_errado'
+    if chaves[2] in questao:
+        if len(questao["opcoes"]) != 4:
+            dic["opcoes"] = 'tamanho_invalido'
+        else:
+            for option in letras:
+                if option not in questao["opcoes"]:
+                    dic["opcoes"] = "chave_invalida_ou_nao_encontrada"
+            for option in letras:
+                if questao["opcoes"][option].strip() == "":
+                    if "opcoes" not in dic: 
+                        dic["opcoes"] = {f'{option}': 'vazia'}
+                    else:
+                        dic["opcoes"][option]  = "vazia"
+    if chaves[3] in questao:
+        if questao["correta"] not in letras: 
+            dic["correta"] = 'valor_errado'
+    return dic 
+        
