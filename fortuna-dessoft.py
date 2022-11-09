@@ -97,11 +97,13 @@ print("Olá! Você está na Fortuna DesSoft e terá a oportunidade de enriquecer
 
 nome = input("Qual seu nome?")
 
-print(f'\n\n ok {nome}, você tem direito a pular 3 vezes e 2 ajudas!\nAs opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"!\n\nAperte ENTER para continuar... ')
-#como fazer o negocio do enter 
-print('\n\nO jogo já vai começar! Lá vem a primeira questão!\n\nVamos começar com questões do nível FACIL!\nAperte ENTER para continuar...')
+print(f'\n\n ok {nome}, você tem direito a pular 3 vezes e 2 ajudas!\nAs opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"!\n\n')
 
+print(input("Aperte ENTER para continuar..."))
 
+print('\n\nO jogo já vai começar! Lá vem a primeira questão!\n\nVamos começar com questões do nível FACIL!\n')
+
+print(input("Aperte ENTER para continuar..."))
     
 
     
