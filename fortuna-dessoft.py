@@ -70,12 +70,5 @@ def sorteia_questao_inedita (dicio, nivel, lista):
     return perg_sor
     
 def questao_para_texto(questao, id):
-    return f"------------------------------------------\n
-QUESTAO {id}\n\n
-{questao['titulo']}\n\n
-RESPOSTAS:\n
-A: {questao['opcoes']['A']}\n
-B: {questao['opcoes']['B']}\n
-C: {questao['opcoes']['C']}\n
-D: {questao['opcoes']['D']}""
+    return f"------------------------------------------\nQUESTAO {id}\n\n{questao['titulo']}\n\nRESPOSTAS:\nA: {questao['opcoes']['A']}\nB: {questao['opcoes']['B']}\nC: {questao['opcoes']['C']}\nD: {questao['opcoes']['D']}"
     
