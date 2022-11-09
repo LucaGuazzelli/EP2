@@ -75,3 +75,24 @@ def sorteia_questao_inedita (dicio, nivel, lista):
 def questao_para_texto(questao, id):
     return f"------------------------------------------\nQUESTAO {id}\n\n{questao['titulo']}\n\nRESPOSTAS:\nA: {questao['opcoes']['A']}\nB: {questao['opcoes']['B']}\nC: {questao['opcoes']['C']}\nD: {questao['opcoes']['D']}"
     
+def gera_ajuda(questao):
+    lista = [ "A", "B", "C", "D"]
+    lista.remove(questao["correta"])
+    n = 1
+    dica = []
+    max = 3
+    qtsorteio = random.randint(1,2)
+    sor_per = random.randint(1,max-1)
+    while qtsorteio >= n:
+        sor_per = random.randint(0,max-1)
+        if questao["opcoes"][lista[sor_per]] not in dica:
+            dica.append(questao["opcoes"][lista[sor_per]])
+            n = n + 1
+    dicas = " | ".join(dica)
+    return f"DICA:\nOpções certamente erradas: {dicas}"
+
+
+
+    
+
+    
