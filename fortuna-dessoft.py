@@ -1,3 +1,6 @@
+
+import random
+
 def transforma_base(listax):
     dic = {}
     for dicio in listax:
@@ -49,8 +52,7 @@ def valida_questoes(lista):
         prob_identificado = valida_questao(questao)
         prob_identificados.append(prob_identificado)
     return prob_identificados
-
-import random 
+ 
 
 def sorteia_questao (dicio, nivel):
     max = len(dicio[nivel])
@@ -69,6 +71,7 @@ def sorteia_questao_inedita (dicio, nivel, lista):
     lista.append(perg_sor)
     return perg_sor
     
+
 def questao_para_texto(questao, id):
     return f"------------------------------------------\nQUESTAO {id}\n\n{questao['titulo']}\n\nRESPOSTAS:\nA: {questao['opcoes']['A']}\nB: {questao['opcoes']['B']}\nC: {questao['opcoes']['C']}\nD: {questao['opcoes']['D']}"
     
