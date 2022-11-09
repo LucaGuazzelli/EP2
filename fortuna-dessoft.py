@@ -108,6 +108,10 @@ print(input("Aperte ENTER para continuar..."))
 print('\n\nO jogo já vai começar! Lá vem a primeira questão!\n\nVamos começar com questões do nível FACIL!\n')
 
 print(input("Aperte ENTER para continuar..."))
-    
+
+qt_ajuda = 0 
+qt_pula = 0 
+qt_parar = 0 
+premiacao = 0   
 
     
