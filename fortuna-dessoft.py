@@ -42,3 +42,11 @@ def valida_questao(questao):
             dic["correta"] = 'valor_errado'
     return dic 
         
+
+def valida_questoes(lista):
+    prob_identificados = []
+    for questao in lista:
+        prob_identificado = valida_questao(questao)
+        prob_identificados.append(prob_identificado)
+    return prob_identificados
+    
