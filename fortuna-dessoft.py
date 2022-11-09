@@ -58,4 +58,17 @@ def sorteia_questao (dicio, nivel):
     num = random.randint(0,max-1)
     perg_sor = dicio[nivel][num]
     return perg_sor 
+
+
+import random 
+
+def sorteia_questao_inedita (dicio, nivel, lista):
+    max = len(dicio[nivel])
+    num = random.randint(0,max-1)
+    perg_sor = dicio[nivel][num]
+    while perg_sor in lista:
+        num = random.randint(0,max-1)
+        perg_sor = dicio[nivel][num]
+    lista.append(perg_sor)
+    return perg_sor
     
