@@ -51,8 +51,6 @@ def valida_questoes(lista):
     return prob_identificados
 
 
-import random 
-
 def sorteia_questao (dicio, nivel):
     max = len(dicio[nivel])
     num = random.randint(0,max-1)
