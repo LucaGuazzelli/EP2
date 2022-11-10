@@ -309,6 +309,11 @@ while resposta != "parar":
     if resposta == quest[id]["correta"]:
         premiacao = premiacao + lista_premiacao[qt_certo]
         qt_certo = qt_certo + 1
+        print(f"Você acertou! Seu prêmio atual é de R$ {premiacao:2f}")
+        print(input("Aperte ENTER para continuar..."))
+        else:
+            print("Que pena! Você errou e vai sair sem nada :(")
+            premiacao = 0 
 
     if resposta == "pular":
         qt_pula = qt_pula + 1
