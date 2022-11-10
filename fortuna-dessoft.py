@@ -277,10 +277,28 @@ qt_pula = 0
 qt_parar = 0 
 premiacao = 0
 qt_certo = 0  
+count_facil = 0 
+count_medio = 0
+count_dificil = 0  
+
 
 while resposta != "parar":
-    
+
     perguntas = transforma_base(quest)
+
+    nivel = "FACIL"
+
+    count_facil = count_facil + 1
+
+    if len(perguntas["facil"]) > count_facil:
+        nivel = "medio"
+        count_medio = count_medio + 1
+        if len(perguntas["medio"]) > count_medio:
+            nivel = "dificil"
+            count_dificil = count_dificil + 1
+            if len(perguntas["dificil"]) > count_dificil:
+                resposta = "parar"
+
 
     perguntas_sorteadas = sorteia_questao_inedita (perguntas, nivel, lista)
 
