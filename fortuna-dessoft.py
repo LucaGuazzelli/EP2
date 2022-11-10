@@ -299,7 +299,6 @@ while resposta != "parar":
             if len(perguntas["dificil"]) > count_dificil:
                 resposta = "parar"
 
-
     perguntas_sorteadas = sorteia_questao_inedita (perguntas, nivel, lista)
 
     pergunta_apresentada = questao_para_texto(perguntas_sorteadas, id)
@@ -317,10 +316,16 @@ while resposta != "parar":
 
     if resposta == "pular":
         qt_pula = qt_pula + 1
-
+        perguntas_sorteadas = sorteia_questao_inedita (perguntas, nivel, lista)
+        pergunta_apresentada = questao_para_texto(perguntas_sorteadas, id)
         if qt_pula > 3:
+            resposta = "parar"
+
     if resposta == "ajuda":
         dica = gera_ajuda(pergunta_apresentada)
+        qt_ajuda = qt_ajuda + 1
+        if  qt_ajuda > 2:
+            resposta = "parar"
 
 
     
