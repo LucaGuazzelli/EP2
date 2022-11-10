@@ -1,3 +1,7 @@
+class ANSI():   
+    def color_text(code): 
+        return "\33[{code}m".format(code=code)
+
 
 import random
 
@@ -260,17 +264,15 @@ def gera_ajuda(questao):
     return f"DICA:\nOpções certamente erradas: {dicas}"
 
 
-print("Olá! Você está na Fortuna DesSoft e terá a oportunidade de enriquecer!\n\n")
+print((ANSI.color_text(95)) + "Olá! Você está na Fortuna DesSoft e terá a oportunidade de enriquecer!\n\n")
 
-nome = input("Qual seu nome?")
+nome = input(ANSI.color_text(39) + "Qual seu nome?")
 
 print(f'\n\n ok {nome}, você tem direito a pular 3 vezes e 2 ajudas!\nAs opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"!\n\n')
 
 print(input("Aperte ENTER para continuar..."))
 
-print('\n\nO jogo já vai começar! Lá vem a primeira questão!\n\nVamos começar com questões do nível FACIL!\n')
-
-print(input("Aperte ENTER para continuar..."))
+print(ANSI.color_text(39) + '\n\n O jogo já vai começar! Lá vem a primeira questão!') + '\n' + '\n' + (ANSI.color_text(39) + 'Vamos começar com questões do nível FACIL!') + '\n' + (ANSI.color_text(39) + "Aperte ENTER para continuar...")
 
 qt_ajuda = 0 
 qt_pula = 0 
@@ -310,7 +312,7 @@ while resposta != "parar":
         premiacao = premiacao + lista_premiacao[qt_certo]
         qt_certo = qt_certo + 1
         print(f"Você acertou! Seu prêmio atual é de R$ {premiacao:2f}")
-        print(input("Aperte ENTER para continuar..."))
+        print(input(ANSI.color_text(39) + "Aperte ENTER para continuar..."))
         else:
             print("Que pena! Você errou e vai sair sem nada :(")
             premiacao = 0 
@@ -321,6 +323,7 @@ while resposta != "parar":
         if qt_pula > 3:
     if resposta == "ajuda":
         dica = gera_ajuda(pergunta_apresentada)
+
 
 
     
