@@ -283,29 +283,45 @@ premiacao = 0
 qt_certo = 0  
 count_facil = 3 
 count_medio = 0
-count_dificil = 0  
+count_dificil = 0
+i = 0 
+qt_facil = len(quest["facil"])
+qt_medio = len(quest["medio"])
+qt_dificil = len(quest["dificil"])
 
+count_de_nivel = 0 
+
+nivel = "facil"
 perguntas = transforma_base(quest)
+perguntas_sorteadas = sorteia_questao_inedita (perguntas, nivel, lista)
+pergunta_apresentada = questao_para_texto(perguntas_sorteadas, id)
 
-while resposta != "parar":
-    if len(quest["facil"]) >= count_facil:
-        count_facil = count_facil + 1
-        if len(quest["medio"]) >= count_medio:
-            count_medio = count_medio + 1
-            if len(quest["dificil"]) >= count_dificil:
-                count_dificil = count_dificil + 1
-        nivel = "facil"
-        perguntas_sorteadas = sorteia_questao_inedita (perguntas, nivel, lista)
-        pergunta_apresentada = questao_para_texto(perguntas_sorteadas, id)
-            nivel = "medio"
+
+resposta = input("Qual sua resposta?! ")
+
+while resposta != "parar" or count_de_nivel < qt_facil:
+    nivel = "facil"
+    if resposta == "pula":
+        if qt_pula < 3:
+            qt_pula = qt_pula + 1
             perguntas_sorteadas = sorteia_questao_inedita (perguntas, nivel, lista)
             pergunta_apresentada = questao_para_texto(perguntas_sorteadas, id)
-                nivel = "dificil"
-                perguntas_sorteadas = sorteia_questao_inedita (perguntas, nivel, lista)
-                pergunta_apresentada = questao_para_texto(perguntas_sorteadas, id)
+            print(pergunta_apresentada)
+        else:
+            print("Nao pode mais pular")
+            print(pergunta_apresentada)
+    if resposta == "ajuda":
+        if qt_ajuda < 2:
+            qt_ajuda = qt_ajuda + 1
+            ajuda_ques = gera_ajuda(perguntas_sorteadas)
+            print(ajuda_ques)
+        else:
+            print("nao pode mais ajuda")
+            print(pergunta_apresentada)
+    count_de_nivel = count_de_nivel + 1
+    if resposta == quest[nivel][id]["correta"]:
+
     
 
 
-if len(quest["facil"]) >= count_facil:
-    count_facil = count_facil + 1
 
