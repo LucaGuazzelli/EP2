@@ -316,7 +316,8 @@ while resposta != "parar" or count_de_nivel < qt_facil:
             pergunta_apresentada = questao_para_texto(perguntas_sorteadas, id)
             print(pergunta_apresentada)
         else:
-            print("Nao pode mais pular")
+            print((ANSI.color_text(91)+ 'Não deu! Você não tem mais direito a pular!'))
+            print(input("Aperte ENTER para continuar..."))
             print(pergunta_apresentada)
     if resposta == "ajuda":
         if qt_ajuda < 2:
@@ -324,16 +325,18 @@ while resposta != "parar" or count_de_nivel < qt_facil:
             ajuda_ques = gera_ajuda(perguntas_sorteadas)
             print(ajuda_ques)
         else:
-            print("nao pode mais ajuda")
+            print((ANSI.color_text(91)+ 'Não deu! Você não tem mais direito a ajuda!'))
+            print(input("Aperte ENTER para continuar..."))
             print(pergunta_apresentada)
     count_de_nivel = count_de_nivel + 1
     if resposta == quest[nivel][id]["correta"]:
             if resposta == quest[nivel][id]["correta"]:
                 premiacao = lista_premiacao[qt_certo] + premiacao
                 qt_certo = qt_certo + 1
-        else: 
-            premiacao = 0 
-            qt_certo = 0 
+            else: 
+                premiacao = 0 
+                qt_certo = 0
+                print() 
     
 
     
