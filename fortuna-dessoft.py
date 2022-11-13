@@ -307,6 +307,33 @@ while resposta != "parar":
 
     resposta = input("Qual sua resposta?! ")
 
-
+while resposta != "parar" or count_de_nivel < qt_facil:
+    nivel = "facil"
+    if resposta == "pula":
+        if qt_pula < 3:
+            qt_pula = qt_pula + 1
+            perguntas_sorteadas = sorteia_questao_inedita (perguntas, nivel, lista)
+            pergunta_apresentada = questao_para_texto(perguntas_sorteadas, id)
+            print(pergunta_apresentada)
+        else:
+            print("Nao pode mais pular")
+            print(pergunta_apresentada)
+    if resposta == "ajuda":
+        if qt_ajuda < 2:
+            qt_ajuda = qt_ajuda + 1
+            ajuda_ques = gera_ajuda(perguntas_sorteadas)
+            print(ajuda_ques)
+        else:
+            print("nao pode mais ajuda")
+            print(pergunta_apresentada)
+    count_de_nivel = count_de_nivel + 1
+    if resposta == quest[nivel][id]["correta"]:
+            if resposta == quest[nivel][id]["correta"]:
+                premiacao = lista_premiacao[qt_certo] + premiacao
+                qt_certo = qt_certo + 1
+        else: 
+            premiacao = 0 
+            qt_certo = 0 
+    
 
     
