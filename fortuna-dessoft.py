@@ -172,7 +172,7 @@ quest = [{'titulo': 'Qual o resultado da operação 57 + 32?',
 
 lista = [] 
 
-def transforma_base(quest):
+def transforma_base(listax):
     dic = {}
     for dicio in listax:
         n = dicio["nivel"]
@@ -225,14 +225,14 @@ def valida_questoes(lista):
     return prob_identificados
  
 
-def sorteia_questao (perguntas, nivel):
+def sorteia_questao (dicio, nivel):
     max = len(dicio[nivel])
     num = random.randint(0,max-1)
     perg_sor = dicio[nivel][num]
     return perg_sor 
 
 
-def sorteia_questao_inedita (perguntas, nivel, lista):
+def sorteia_questao_inedita (dicio, nivel, lista):
     max = len(dicio[nivel])
     num = random.randint(0,max-1)
     perg_sor = dicio[nivel][num]
@@ -283,6 +283,9 @@ count_facil = 0
 count_medio = 0
 count_dificil = 0  
 
+qt_facil = 0 
+qt_medio = 0 
+qt_dificil = 0 
 
 while resposta != "parar":
 
