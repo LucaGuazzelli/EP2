@@ -307,28 +307,6 @@ while resposta != "parar":
 
     resposta = input("Qual sua resposta?! ")
 
-    if resposta == quest[id]["correta"]:
-        premiacao = premiacao + lista_premiacao[qt_certo]
-        qt_certo = qt_certo + 1
-        print(f"Você acertou! Seu prêmio atual é de R$ {premiacao:2f}")
-        print(input(ANSI.color_text(39) + "Aperte ENTER para continuar..."))
-        else:
-            print("Que pena! Você errou e vai sair sem nada :(")
-            premiacao = 0 
-
-    if resposta == "pular":
-        qt_pula = qt_pula + 1
-        perguntas_sorteadas = sorteia_questao_inedita (perguntas, nivel, lista)
-        pergunta_apresentada = questao_para_texto(perguntas_sorteadas, id)
-        if qt_pula > 3:
-            resposta = "parar"
-
-    if resposta == "ajuda":
-        dica = gera_ajuda(pergunta_apresentada)
-        qt_ajuda = qt_ajuda + 1
-        if  qt_ajuda > 2:
-            resposta = "parar"
-
 
 
     
