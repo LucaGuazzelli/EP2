@@ -339,7 +339,7 @@ while resposta != "parar" or count_de_nivel < qt_facil:
             else: 
                 premiacao = 0 
                 qt_certo = 0
-                print() 
+                print((ANSI.color_text(91)+ 'Voce errou!'))
     
 
     
